@@ -1,5 +1,5 @@
-@import "colors";
 @import "mixins";
+@import "colors";
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -51,11 +51,11 @@ table {
 }
 a {
 	text-decoration: none;
-	color: $text;
 	@extend .transition;
+	color: $text;
 
 	&:hover {
-		color: $blue;
+		color: $hover;
 	}
 }
 

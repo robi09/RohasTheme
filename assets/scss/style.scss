@@ -1,3 +1,195 @@
 @import "reset";
 @import "cf";
+@import "mixins";
+@import "colors";
 
+.roboto {
+	font-family: 'Roboto Slab', serif;
+}
+
+.handwritting {
+	font-family: 'Just Another Hand', cursive;
+}
+
+body {
+	@extend .roboto;
+	line-height: 26px;
+	color: $text;
+	background: url('../images/concrete_seamless.png');
+	font-size: 16px;
+}
+
+.wrapper {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#header {
+	@extend .bgcover;
+	width: 100%;
+	overflow: hidden;
+	background-position: center center;
+
+	.overlay {
+		background-color: rgba($headline, 0.7);
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+#logo {
+	margin: 80px auto;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+
+	h1 {
+		font-weight: 700;
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 24px;
+		font-weight: 300;
+		margin-top: 10px;
+		letter-spacing: 1px;
+	}
+}
+
+#main_navigation {
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	background: #fff;
+
+	li {
+		text-align: center;
+		display: inline-block;
+
+		&:last-of-type {
+			a {
+				border-right: none;
+			}
+		}
+	}
+
+	a {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 0 40px;
+		border-right: 1px solid $border;
+		line-height: 80px;
+		display: block;
+	}
+}
+
+.post {
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 0 40px 0 rgba(black, 0.2);
+	margin-top: 80px;
+	overflow: hidden;
+
+	.featured_image {
+		width: 40%;
+		height: 100%;
+		float: left;
+		@extend .bgcover;
+		background-position: center center;
+		overflow: hidden;
+		background-position: center center;
+	}
+
+	.post_content {
+		width: 60%;
+		padding: 40px;
+		@extend .borderbox;
+		float: left;
+	}
+
+	h3 {
+		font-size: 28px;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	.post_meta {
+		opacity: 0.8;
+		font-style: italic;
+		font-weight: 300;
+		margin-top: 10px;
+	}
+
+	p {
+		margin-top: 20px;
+	}
+
+	.readmore {
+		margin-top: 40px;
+		@extend .handwritting;
+		font-size: 24px;
+		display: block;
+		letter-spacing: 2px;
+	}
+}
+
+.navigation {
+	padding: 40px 0;
+	overflow: hidden;
+
+	.left {
+		float: left;
+
+		i {
+			padding-right: 10px;
+		}
+	}
+
+	.right {
+		float: right;
+		text-align: right;
+
+		i {
+			padding-left: 10px;
+		}
+	}
+
+	a {
+		font-weight: 700;
+		display: block;
+	}
+}
+
+#footer {
+	background: $text url('../images/concrete_wall.png');
+	padding: 40px 0;
+	color: $border;
+	
+	.wrapper {
+		overflow: hidden;
+	}
+
+	.widget {
+		width: 33.33%;
+		@extend .borderbox;
+		padding: 0 20px;
+		float: left;
+	}
+
+	.widget_title {
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.copyright {
+		width: 100%;
+		line-height: 20px;
+		text-align: center;
+		opacity: 0.7;
+		padding-top: 40px;
+		margin-top: 40px;
+		border-top: 1px solid rgba($border, 0.1);
+		font-weight: 300;
+	}
+}
