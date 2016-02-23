@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="UTF-8" />
-	<title>RohasTheme</title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="assets/js/script.js"></script>
+
+	<?php wp_head(); ?>
 </head>
 <body>
-	<header id="header" style="background-image: url(https://source.unsplash.com/random);">
+	<header id="header" style="background-image: url(<?php header_image(); ?>);">
 		<div class="overlay">
-			<a href="index.html" id="logo">
-				<h1>RohasTheme</h1>
-				<h2>Clean WordPress blog theme</h2>
+			<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>" id="logo">
+				<h1><?php bloginfo('name'); ?></h1>
+				<h2><?php bloginfo('description'); ?></h2>
 			</a><!-- /#logo  -->
 		</div><!-- / .overlay -->
 	</header><!-- /#header  -->
 	<nav id="main_navigation">
 		<div class="wrapper">
-			<ul>
-				<li><a href="">Lipsum 1</a></li>
-				<li><a href="">Lipsum 2</a></li>
-				<li><a href="">Lipsum 3</a></li>
-				<li><a href="">Lipsum 4</a></li>
-				<li><a href="">Lipsum 5</a></li>
-			</ul>
+			<?php 
+
+				//Display left header menu
+				$menu_location = 'header_menu';
+				if(has_nav_menu($menu_location)) {
+					wp_nav_menu( array('theme_location' => $menu_location, 'container' => '' ) );
+				}
+
+			?>
 		</div><!-- / .wrapper -->
 	</nav><!-- /#main_navigation  -->
 
 	<main>
+		<div class="wrapper">
