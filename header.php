@@ -8,7 +8,7 @@
 
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<header id="header" style="background-image: url(<?php header_image(); ?>);">
 		<div class="overlay">
 			<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>" id="logo">
@@ -17,19 +17,23 @@
 			</a><!-- /#logo  -->
 		</div><!-- / .overlay -->
 	</header><!-- /#header  -->
-	<nav id="main_navigation">
-		<div class="wrapper">
-			<?php 
+	
+	<?php 
 
-				//Display left header menu
-				$menu_location = 'header_menu';
-				if(has_nav_menu($menu_location)) {
-					wp_nav_menu( array('theme_location' => $menu_location, 'container' => '' ) );
-				}
+		//Display left header menu
+		$menu_location = 'header_menu';
+		if(has_nav_menu($menu_location)) {
+			echo '<nav id="main_navigation">
+					<div class="wrapper">';
+					
+			wp_nav_menu( array('theme_location' => $menu_location, 'container' => '' ) );
 
-			?>
-		</div><!-- / .wrapper -->
-	</nav><!-- /#main_navigation  -->
+			echo '</div><!-- / .wrapper -->
+			</nav><!-- /#main_navigation  -->';
+		}
+
+	?>
+		
 
 	<main>
 		<div class="wrapper">

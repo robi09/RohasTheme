@@ -1,16 +1,18 @@
-<article class="post">
-	<figure class="featured_image" style="background-image: url(https://source.unsplash.com/random);"></figure><!-- / .featured_image -->
-	<div class="post_content">
-		<h3><a href="single.html">Post title test 1</a></h3>
-		<div class="post_meta">January 16, 2015 - One Comment</div><!-- / .post_meta -->
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae enim quam aperiam, rerum sed dolorem delectus, temporibus eos voluptas accusamus molestiae quibusdam libero quaerat maxime 	provident. Dolorum nemo perferendis quas.
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime adipisci, hic modi id quisquam voluptatibus voluptates vel, veniam in non eum molestias autem cupiditate iste, perspiciatis? Minima ullam sequi aperiam.nt. Dolorum nemo perferendis quas.
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime adipisci, hic modi id quisquam voluptatibus voluptates vel, veniam in non eum molestias autem cupiditate iste, perspiciatis? Minima ullam sequi aperiam.nt. Dolorum nemo perferendis quas.
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime adipisci, hic modi id quisquam voluptatibus voluptates vel, veniam in non eum molestias autem cupiditate iste, perspiciatis? Minima ullam sequi aperiam.
-		</p>
-		<a href="single.html" class="readmore">Read More</a>
+<article <?php post_class('post'); ?>>
+	<?php
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ) );
+		$full_width = '';
+
+		if($image) {
+			echo '<figure class="featured_image" style="background-image: url('.esc_url($image[0]).');"></figure>';
+		} else {
+			$full_width = ' style="width: 100%;"';
+		}
+	?>
+	<div class="post_content"<?php echo $full_width; ?>>
+		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<div class="post_meta"><?php echo the_date('F j,Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div><!-- / .post_meta -->
+		<p><?php the_excerpt(); ?></p>
+		<a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
 	</div><!-- / .post_content -->
 </article><!-- / .post -->

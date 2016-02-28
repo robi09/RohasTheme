@@ -20,18 +20,69 @@ function rohas_theme_setup() {
 		'header_menu' => esc_html__( 'Header Menu', 'rohas' )
 	) );
 }
-
 add_action( 'after_setup_theme', 'rohas_theme_setup' );
 
 function rohas_styles() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0');
 }
-
 add_action( 'wp_enqueue_scripts', 'rohas_styles' );
 
 function rohas_scripts() {
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0', true );
 }
-
 add_action( 'wp_enqueue_scripts', 'rohas_scripts' );
+
+function rohas_hmtl5shiv () {
+    echo '
+    	<!--[if lt IE 9]>
+    		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    	<![endif]-->
+    	';
+}
+add_action( 'wp_head', 'rohas_hmtl5shiv' );
+
+function revive_sidebars() {
+
+	$footer_sidebar_one = array(
+		'id'			=> 'footer_sidebar_one',
+		'name'			=> __( 'Footer Sidebar One', 'rohas' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget_title">',
+		'after_title'   => '</div>',
+	);
+	register_sidebar( $footer_sidebar_one );
+
+	$footer_sidebar_two = array(
+		'id'			=> 'footer_sidebar_two',
+		'name'			=> __( 'Footer Sidebar Two', 'rohas' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget_title">',
+		'after_title'   => '</div>',
+	);
+	register_sidebar( $footer_sidebar_two );
+
+	$footer_sidebar_three = array(
+		'id'			=> 'footer_sidebar_three',
+		'name'			=> __( 'Footer Sidebar Three', 'rohas' ),
+		'before_widget' => '<div class="widget %2$s" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget_title">',
+		'after_title'   => '</div>',
+	);
+	register_sidebar( $footer_sidebar_three );
+
+}
+add_action( 'widgets_init', 'revive_sidebars' );
+
+function rohas_next_nav_filter(){
+	return 'class="right"';
+}
+add_filter('next_posts_link_attributes','rohas_next_nav_filter',10,1);
+
+function rohas_prev_nav_filter(){
+	return 'class="left"';
+}
+add_filter('previous_posts_link_attributes','rohas_prev_nav_filter',10,1);

@@ -2,23 +2,28 @@
 
 get_header();
 
-if ( have_posts() ) : 
-
+if ( have_posts() )  {
 	while ( have_posts() ) : the_post();
 
 		get_template_part( 'parts/content-post' );
 
 	endwhile;
 
-	// Previous/next page navigation.
-	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'rohas' ),
-		'next_text'          => __( 'Next page', 'rohas' ),
-	) );
+	//Navigation
+	echo '<div class="navigation">';
 
-else :
+	if ( get_previous_posts_link() ) {
+		previous_posts_link( '<i class="fa fa-angle-double-left"></i>Previous' );
+	}
+
+	if ( get_next_posts_link() ) {
+		next_posts_link( 'Next<i class="fa fa-angle-double-right"></i>' ); 
+	}
+	echo '</div>';
+
+} else {
 	get_template_part( 'parts/content', 'none' );
-endif;
+}
 
 get_footer(); 
 
