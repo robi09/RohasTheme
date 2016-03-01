@@ -92,6 +92,10 @@ body {
 	margin-top: 80px;
 	overflow: hidden;
 
+	&.page {
+		margin-bottom: 80px;
+	}
+
 	.featured_image {
 		width: 40%;
 		height: 100%;
