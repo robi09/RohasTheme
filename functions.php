@@ -31,8 +31,14 @@ add_action( 'after_setup_theme', 'rohas_theme_setup' );
  * Add theme stylesheets
  */
 function rohas_styles() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0');
+	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array('main-style'), '4.5.0');
+}
+add_action( 'wp_enqueue_scripts', 'rohas_styles' );
+
+function rohas_styles() {
+	wp_enqueue_style(); //Stil 1
+	wp_enqueue_style(); //Stil 2
 }
 add_action( 'wp_enqueue_scripts', 'rohas_styles' );
 
