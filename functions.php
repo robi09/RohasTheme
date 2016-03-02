@@ -36,12 +36,6 @@ function rohas_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'rohas_styles' );
 
-function rohas_styles() {
-	wp_enqueue_style(); //Stil 1
-	wp_enqueue_style(); //Stil 2
-}
-add_action( 'wp_enqueue_scripts', 'rohas_styles' );
-
 /**
  * Add theme scripts
  */
