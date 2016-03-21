@@ -24,6 +24,9 @@ function rohas_theme_setup() {
 		$content_width = 1366;
 	}
 
+		// Imge sizes
+	add_image_size( 'rohas-post', 600, 600 );
+
 }
 add_action( 'after_setup_theme', 'rohas_theme_setup' );
 
