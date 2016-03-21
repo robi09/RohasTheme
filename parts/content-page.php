@@ -10,8 +10,6 @@
 		?>
 		<div class="post_content">
 			<h3><?php the_title(); ?></h3>
-			<div class="post_meta"><?php echo the_date('F j,Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div>
-
 			<?php the_content(); ?>
 		</div><!-- / .post_content -->
 		
