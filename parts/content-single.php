@@ -12,7 +12,15 @@
 			<h3><?php the_title(); ?></h3>
 			<div class="post_meta"><?php echo the_time('F j,Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div>
 
-			<?php the_content(); ?>
+			<?php 
+
+			the_content(); 
+
+			the_tags();
+
+			wp_link_pages();
+
+			?>
 		</div><!-- / .post_content -->
 		
 	</div><!-- / .post_content -->

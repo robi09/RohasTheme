@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    require('load-grunt-tasks')(grunt);
+
     // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -16,37 +18,38 @@ module.exports = function(grunt) {
         },
 
         watch: {
-          php: {
-            files: ['*.php', '**/{,*/}*.php'],
-          },
-
-          html: {
-            files: ['*.html', '**/{,*/}*.html'],
-          },
-
-          js: {
-            files: ['*.js', '**/{,*/}*.js'],
-          },
-
-          css: {
-            files: '**/*.scss',
-            tasks: ['sass']
-          },
 
           options: {
             livereload: true,
             spawn: false
+          }, 
+
+          js: {
+            files: ['assets/js/*.js'],
+          },
+
+          css: {
+            files: ['assets/scss/*.scss'],
+            tasks: ['sass'],
           }
-        }
+
+        },
+
+        sass: {
+          options: {                      
+              // outputStyle: 'compressed',
+              sourceMap: true,
+          },
+          dist: {
+            files: {
+              'assets/css/main.css' : 'assets/scss/style.scss',
+            }
+          }
+        },
 
     });
 
-    // 3. Where we tell Grunt we plan to use this plug-in.
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-contrib-compass');
-
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
+  
     grunt.registerTask('default', ['watch']);
 
 };

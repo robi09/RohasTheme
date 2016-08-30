@@ -14,10 +14,11 @@ function rohas_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'custom-header', $custom_header_args );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption') );
+	add_theme_support( 'automatic-feed-links' );
 
 		//Register navigation menu
 	register_nav_menus( array(
-		'header_menu' => esc_html__( 'Header Menu', 'rohas' )
+		'header_menu' => esc_html__( 'Header Menu', 'rohas-lite' )
 	) );
 
 	if ( ! isset( $content_width ) ) {
@@ -36,6 +37,10 @@ add_action( 'after_setup_theme', 'rohas_theme_setup' );
 function rohas_styles() {
 	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array('main-style'), '4.5.0');
+
+	if( is_singular() ) {
+		wp_enqueue_script( "comment-reply" );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rohas_styles' );
 
@@ -66,7 +71,7 @@ function revive_sidebars() {
 
 	$footer_sidebar_one = array(
 		'id'			=> 'footer_sidebar_one',
-		'name'			=> __( 'Footer Sidebar One', 'rohas' ),
+		'name'			=> __( 'Footer Sidebar One', 'rohas-lite' ),
 		'before_widget' => '<div class="widget %2$s" id="%1$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="widget_title">',
@@ -76,7 +81,7 @@ function revive_sidebars() {
 
 	$footer_sidebar_two = array(
 		'id'			=> 'footer_sidebar_two',
-		'name'			=> __( 'Footer Sidebar Two', 'rohas' ),
+		'name'			=> __( 'Footer Sidebar Two', 'rohas-lite' ),
 		'before_widget' => '<div class="widget %2$s" id="%1$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="widget_title">',
@@ -86,7 +91,7 @@ function revive_sidebars() {
 
 	$footer_sidebar_three = array(
 		'id'			=> 'footer_sidebar_three',
-		'name'			=> __( 'Footer Sidebar Three', 'rohas' ),
+		'name'			=> __( 'Footer Sidebar Three', 'rohas-lite' ),
 		'before_widget' => '<div class="widget %2$s" id="%1$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="widget_title">',
