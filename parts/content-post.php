@@ -11,7 +11,7 @@
 	?>
 	<div class="post_content"<?php echo $full_width; ?>>
 		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<div class="post_meta"><?php echo the_time('F j,Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div><!-- / .post_meta -->
+		<div class="post_meta"><?php echo the_time('F j, Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div><!-- / .post_meta -->
 		<p><?php the_excerpt(); ?></p>
 		<a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
 	</div><!-- / .post_content -->

@@ -28,6 +28,9 @@ function rohas_theme_setup() {
 		// Imge sizes
 	add_image_size( 'rohas-post', 600, 600 );
 
+		// Language
+	load_theme_textdomain('rohas-lite', get_template_directory() . '/languages'); 
+
 }
 add_action( 'after_setup_theme', 'rohas_theme_setup' );
 
