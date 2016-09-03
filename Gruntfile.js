@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
         },
 
-         makepot: {
+        makepot: {
           target: {
               options: {
                   cwd: '',                          // Directory of files to internationalize.
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                   include: [],                      // List of files or directories to include.
                   mainFile: '',                     // Main project file.
                   potComments: '',                  // The copyright at the beginning of the POT file.
-                  potFilename: 'en_EN.pot',                  // Name of the POT file.
+                  potFilename: 'rohas-lite.pot',                  // Name of the POT file.
                   potHeaders: {
                       poedit: true,                 // Includes common Poedit headers.
                       'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                   processPot: null,                 // A callback function for manipulating the POT file.
                   type: 'wp-theme',                // Type of project (wp-plugin or wp-theme).
                   updateTimestamp: true,            // Whether the POT-Creation-Date should be updated without other changes.
-                  updatePoFiles: false              // Whether to update PO files in the same directory as the POT file.
+                  updatePoFiles: true              // Whether to update PO files in the same directory as the POT file.
               }
           }
       }
