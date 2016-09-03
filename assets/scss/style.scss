@@ -1,13 +1,29 @@
+@import "fonts";
 @import "reset";
 @import "cf";
 @import "mixins";
-@import "colors";
+@import "colors"; 
+
+// Font awesome
+@import "fa/variables";
+@import "fa/mixins";
+@import "fa/path";
+@import "fa/core";
+@import "fa/larger";
+@import "fa/fixed-width";
+@import "fa/list";
+@import "fa/bordered-pulled";
+@import "fa/animated";
+@import "fa/rotated-flipped";
+@import "fa/stacked";
+@import "fa/icons";
+@import "fa/screen-reader";
 
 .roboto {
 	font-family: 'Roboto Slab', serif;
 }
 
-.handwritting {
+.handwritting { 
 	font-family: 'Just Another Hand', cursive;
 }
 
@@ -15,7 +31,7 @@ body {
 	@extend .roboto;
 	line-height: 26px;
 	color: $text;
-	background: url('../images/concrete_seamless.png');
+	background-image: url('../images/concrete_seamless.png');
 	font-size: 16px;
 }
 
@@ -37,7 +53,8 @@ body {
 	}
 }
 
-#logo {
+#logo,
+.custom-logo-link {
 	margin: 80px auto;
 	text-transform: uppercase;
 	color: #fff;
@@ -74,6 +91,101 @@ body {
 		}
 	}
 
+	ul > li {
+			height: 15px;
+			line-height: 15px;
+			font-size: 15px;
+			position: relative;
+			
+			&:hover > ul {
+				display: block;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+
+			&:hover {
+				> a {
+					color: $hover;
+				}
+
+				&.menu-item-has-children:before {
+					color: $hover;
+				}
+			}
+
+			&.menu-item-has-children {
+				a {
+					padding-right: 34px;
+				}
+
+				&:before {
+					content: "\f0dd";
+					text-rendering: auto;
+				    -webkit-font-smoothing: antialiased;
+				    -moz-osx-font-smoothing: grayscale;
+				    font-family: "FontAwesome";
+				    position: absolute;
+				    right: 18px;
+				    top: 30px;
+					font-size: 14px;
+					line-height: 10px;
+				}
+			}
+
+			ul {
+				display: none;
+				position: absolute;
+				top: 80px;
+				z-index: 99999;
+				width: 200px;
+				background: #fff;
+				margin-top: 0;
+
+				li {
+					width: 100%;
+					border-right: 0;
+					border-bottom: 1px solid rgba(white, 0.2);
+					text-align: center;
+					display: block;
+					height: auto;
+					border-bottom: 1px solid rgba(black, 0.05);
+
+					&.menu-item-has-children {
+						&:before {
+				    		top: 20px;
+						}
+					}
+
+					a {
+						text-transform: none;
+						font-size: 14px;
+						display: block;
+						padding: 8px 0 !important;
+						font-weight: 400;
+						line-height: 40px;
+
+						&:hover {
+							color: $hover;
+						}
+					}
+
+					ul {
+						left: 200px;
+						top: 0;
+						background: rgba(white, 0.9);
+					}
+				}
+			}
+
+			a {	
+				padding: 0 16px;
+				text-transform: uppercase;
+			}
+		}
+
+
 	a {
 		text-transform: uppercase;
 		font-size: 14px;
@@ -85,12 +197,317 @@ body {
 	}
 }
 
+.formatting {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+
+	form {
+		input {
+			padding: 5px;
+			background: #fff;
+			border: 1px solid rgba(black, 0.2);
+			@extend .roboto;
+		}
+
+		input[type="submit"],
+		button {
+			background: $cta;
+			@extend .roboto;
+			padding: 5px 15px;
+			color: #fff;
+
+			&:hover {
+				background: $hover;
+				cursor: pointer;
+				font-weight: 700;
+			}
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	h1 {
+		font-size: 32px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	h4 {
+		font-size: 18px;
+	}
+
+	h5 {
+		font-size: 14px;
+	}
+
+	h6 {
+		font-size: 12px;
+	}
+
+	blockquote {
+		font-size: 22px;
+		font-style: italic;
+		margin: 15px;
+		width: 90%;
+		margin-left: 5%;
+		color: $cta;
+	}
+
+	table {
+		width: 100%;
+		margin-bottom: 30px;
+
+		caption {
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+
+		thead {
+
+			th {
+				font-weight: 700;
+				padding-bottom: 5px;
+				border-right: 1px solid $border;
+				border-bottom: 1px solid $border;
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+
+		tbody {
+			text-align: center;
+			font-size: 14px;
+			font-weight: 300;
+
+			a {
+				font-weight: 700;
+			}
+
+			tr {
+				border-bottom: 1px solid $border;
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				td {
+					border-right: 1px solid $border;
+					padding: 7px;
+
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+
+		tfoot {
+			font-size: 14px;
+
+			#next {
+				text-align: right;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		td#prev {
+			padding-top: 10px;
+		}
+
+		td#next {
+			padding-top: 10px;
+		}
+	}
+
+	ul, ol, dl {
+		margin-bottom: 15px;
+	}
+
+	dl {
+		dd {
+			margin-left: 30px;
+		}
+	}
+
+	ul {
+		list-style-type: initial;
+		list-style-position: inside;
+
+		li {
+			margin-left: 30px;
+		}
+	}
+
+	ol {
+		list-style-type: initial;
+		list-style-position: inside;
+
+		li {
+			margin-left: 30px;
+		}
+	}
+
+	address {
+		font-style: italic;
+	}
+
+	strong {
+		font-weight: 700;
+	}
+
+	abbr,
+	acronym {
+		border-bottom: 1px dotted $border;
+	}
+
+	big {
+		font-size: 24px;
+	}
+
+	cite {
+		font-style: italic;
+	}
+
+	code,
+	kbd {
+		background: $border;
+		padding: 5px;
+	}
+
+	pre,
+	code {
+		width: 80%;
+		padding: 2%;
+		background: rgba(255, 255, 255, 0.1);
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		word-wrap: break-word;
+		font-family: monospace;
+	}
+
+	sub,
+	sup {
+	  	font-size: 75%;
+	  	line-height: 0;
+	  	position: relative;
+	  	vertical-align: baseline;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	.wp-caption {
+		max-width: 100% !important;
+	}
+
+	img.alignright {
+		float: right;
+		margin: 0 0 30px 30px;
+	}
+
+	img.alignleft {
+		float: left;
+		margin: 0 30px 30px 0;
+	}
+
+	img.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	img.alignnone {
+		max-width: 100%;
+	}
+
+	.alignright {
+		float: right;
+	}
+
+	.alignleft {
+		float: left;
+	}
+
+	.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+.paginated_post {
+	width: 100%;
+	border-top: 1px solid rgba(black, 0.1);
+	border-bottom: 1px solid rgba(black, 0.1);
+	text-align: center;
+	line-height: 40px;
+	position: relative;
+
+	.title {
+		display: block;
+		position: absolute;
+		top: -40px;
+		color: rgba(black, 0.3);
+		left: 0; right: 0;
+		margin: auto;
+		font-size: 11px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	
+	> span {
+		font-weight: 700;
+	}
+
+	a,
+	> span {
+		border-left: 1px solid rgba(black, 0.1);
+		padding: 10px 15px;
+
+		&:last-child {
+			border-right: 1px solid rgba(black, 0.1);
+		}	
+	}
+}
+
 .post {
 	width: 100%;
 	background: #fff;
 	box-shadow: 0 0 40px 0 rgba(black, 0.2);
 	margin-top: 80px;
 	overflow: hidden;
+
+	&.sticky {
+		box-shadow: 0 0 0 11px #fff inset, 
+					0 0 0 15px rgba(black, 0.05) inset,
+					0 0 40px 0 rgba(0, 0, 0, 0.2);
+	}
 
 	&.page {
 		margin-bottom: 80px;
@@ -111,238 +528,7 @@ body {
 		padding: 40px;
 		@extend .borderbox;
 		float: left;
-
-		h1, h2, h3, h4, h5, h6 {
-			font-weight: 700;
-			margin-bottom: 15px;
-		}
-
-		h1 {
-			font-size: 32px;
-		}
-
-		h2 {
-			font-size: 30px;
-		}
-
-		h4 {
-			font-size: 18px;
-		}
-
-		h5 {
-			font-size: 14px;
-		}
-
-		h6 {
-			font-size: 12px;
-		}
-
-		blockquote {
-			font-size: 22px;
-			font-style: italic;
-			margin: 15px;
-			width: 90%;
-			margin-left: 5%;
-			color: $cta;
-		}
-
-		table {
-			width: 100%;
-			margin-bottom: 30px;
-
-			caption {
-				margin-bottom: 10px;
-				font-weight: 700;
-			}
-
-			thead {
-
-				th {
-					font-weight: 700;
-					padding-bottom: 5px;
-					border-right: 1px solid $border;
-					border-bottom: 1px solid $border;
-
-					&:last-child {
-						border-right: none;
-					}
-				}
-			}
-
-			tbody {
-				text-align: center;
-				font-size: 14px;
-				font-weight: 300;
-
-				a {
-					font-weight: 700;
-				}
-
-				tr {
-					border-bottom: 1px solid $border;
-
-					&:last-child {
-						border-bottom: none;
-					}
-
-					td {
-						border-right: 1px solid $border;
-						padding: 7px;
-
-						&:last-child {
-							border-right: none;
-						}
-					}
-				}
-			}
-
-			tfoot {
-				font-size: 14px;
-
-				#next {
-					text-align: right;
-				}
-			}
-
-			a {
-				text-decoration: underline;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
-
-			td#prev {
-				padding-top: 10px;
-			}
-
-			td#next {
-				padding-top: 10px;
-			}
-		}
-
-		dl {
-			dd {
-				margin-left: 30px;
-			}
-		}
-
-		ul {
-			list-style-type: initial;
-			list-style-position: inside;
-
-			li {
-				margin-left: 30px;
-			}
-		}
-
-		ol {
-			list-style-type: initial;
-			list-style-position: inside;
-
-			li {
-				margin-left: 30px;
-			}
-		}
-
-		address {
-			font-style: italic;
-		}
-
-		strong {
-			font-weight: 700;
-		}
-
-		abbr,
-		acronym {
-			border-bottom: 1px dotted $border;
-		}
-
-		big {
-			font-size: 24px;
-		}
-
-		cite {
-			font-style: italic;
-		}
-
-		code,
-		kbd {
-			background: $border;
-			padding: 5px;
-		}
-
-		pre,
-		code {
-			width: 80%;
-			padding: 2%;
-			background: rgba(255, 255, 255, 0.1);
-			white-space: pre-wrap;
-			white-space: -moz-pre-wrap;
-			white-space: -pre-wrap;
-			white-space: -o-pre-wrap;
-			word-wrap: break-word;
-			font-family: monospace;
-		}
-
-		sub,
-		sup {
-		  	font-size: 75%;
-		  	line-height: 0;
-		  	position: relative;
-		  	vertical-align: baseline;
-		}
-
-		sup {
-			top: -0.5em;
-		}
-
-		sub {
-			bottom: -0.25em;
-		}
-
-		img {
-			max-width: 100%;
-		}
-
-		.wp-caption {
-			max-width: 100% !important;
-		}
-
-		img.alignright {
-			float: right;
-			margin: 0 0 30px 30px;
-		}
-
-		img.alignleft {
-			float: left;
-			margin: 0 30px 30px 0;
-		}
-
-		img.aligncenter {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		img.alignnone {
-			max-width: 100%;
-		}
-
-		.alignright {
-			float: right;
-		}
-
-		.alignleft {
-			float: left;
-		}
-
-		.aligncenter {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-		}
+		@extend .formatting;
 	}
 
 	h3 {
@@ -356,6 +542,7 @@ body {
 		font-style: italic;
 		font-weight: 300;
 		margin-top: 10px;
+		margin-bottom: 40px;
 	}
 
 	p {
@@ -399,7 +586,8 @@ body {
 }
 
 #footer {
-	background: $text url('../images/concrete_wall.png');
+	background-color: $text;
+	background-image: url('../images/concrete_wall.png');
 	color: $border;
 	overflow: hidden;
 	padding-bottom: 40px;
@@ -742,6 +930,10 @@ body {
 		float: right;
 	}
 
+	.comment {
+		@extend .formatting;
+	}
+
 	#respond {
 
 
@@ -790,6 +982,16 @@ body {
 			background: $hover;
 			cursor: pointer;
 		}
+	}
+}
+
+.tags_single {
+	border: 1px solid rgba(black, 0.1);
+	padding: 10px;
+	font-size: 12px;
+
+	a {
+		font-style: italic;
 	}
 }
 
@@ -871,3 +1073,118 @@ body {
     font-weight: 700;
     margin-top: 80px;
 }
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+ .gallery-caption {
+ 	font-style: italic;
+ }
+
+ .bypostauthor {
+ 	font-weight: bold;
+ }
