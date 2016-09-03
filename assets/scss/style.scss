@@ -886,6 +886,10 @@ body {
 		float: right;
 	}
 
+	.comment {
+		@extend .formatting;
+	}
+
 	#respond {
 
 
@@ -934,6 +938,16 @@ body {
 			background: $hover;
 			cursor: pointer;
 		}
+	}
+}
+
+.tags_single {
+	border: 1px solid rgba(black, 0.1);
+	padding: 10px;
+	font-size: 12px;
+
+	a {
+		font-style: italic;
 	}
 }
 

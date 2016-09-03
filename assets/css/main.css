@@ -1400,7 +1400,7 @@ svg { max-width: 100%; }
 
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
-.roboto, body, .formatting form input, .post .post_content form input, .formatting form input[type="submit"], .formatting form button, .post .post_content form button, #comments #respond input, #comments #respond textarea { font-family: 'Roboto Slab', serif; }
+.roboto, body, .formatting form input, .post .post_content form input, #comments .comment form input, .formatting form input[type="submit"], .formatting form button, .post .post_content form button, #comments .comment form button, #comments #respond input, #comments #respond textarea { font-family: 'Roboto Slab', serif; }
 
 .handwritting, .post .readmore, #comments .reply { font-family: 'Just Another Hand', cursive; }
 
@@ -1454,107 +1454,107 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 
 #main_navigation a { text-transform: uppercase; font-size: 14px; font-weight: 700; padding: 0 40px; border-right: 1px solid #eee; line-height: 80px; display: block; }
 
-.formatting, .post .post_content { -ms-word-wrap: break-word; word-wrap: break-word; }
+.formatting, .post .post_content, #comments .comment { -ms-word-wrap: break-word; word-wrap: break-word; }
 
-.formatting form input, .post .post_content form input { padding: 5px; background: #fff; border: 1px solid rgba(0, 0, 0, 0.2); }
+.formatting form input, .post .post_content form input, #comments .comment form input { padding: 5px; background: #fff; border: 1px solid rgba(0, 0, 0, 0.2); }
 
-.formatting form input[type="submit"], .post .post_content form input[type="submit"], .formatting form button, .post .post_content form button { background: #4FCCFC; padding: 5px 15px; color: #fff; }
+.formatting form input[type="submit"], .post .post_content form input[type="submit"], #comments .comment form input[type="submit"], .formatting form button, .post .post_content form button, #comments .comment form button { background: #4FCCFC; padding: 5px 15px; color: #fff; }
 
-.formatting form input[type="submit"]:hover, .post .post_content form input[type="submit"]:hover, .formatting form button:hover, .post .post_content form button:hover { background: #E65E24; cursor: pointer; font-weight: 700; }
+.formatting form input[type="submit"]:hover, .post .post_content form input[type="submit"]:hover, #comments .comment form input[type="submit"]:hover, .formatting form button:hover, .post .post_content form button:hover, #comments .comment form button:hover { background: #E65E24; cursor: pointer; font-weight: 700; }
 
-.formatting h1, .post .post_content h1, .formatting h2, .post .post_content h2, .formatting h3, .post .post_content h3, .formatting h4, .post .post_content h4, .formatting h5, .post .post_content h5, .formatting h6, .post .post_content h6 { font-weight: 700; margin-bottom: 15px; }
+.formatting h1, .post .post_content h1, #comments .comment h1, .formatting h2, .post .post_content h2, #comments .comment h2, .formatting h3, .post .post_content h3, #comments .comment h3, .formatting h4, .post .post_content h4, #comments .comment h4, .formatting h5, .post .post_content h5, #comments .comment h5, .formatting h6, .post .post_content h6, #comments .comment h6 { font-weight: 700; margin-bottom: 15px; }
 
-.formatting h1, .post .post_content h1 { font-size: 32px; }
+.formatting h1, .post .post_content h1, #comments .comment h1 { font-size: 32px; }
 
-.formatting h2, .post .post_content h2 { font-size: 30px; }
+.formatting h2, .post .post_content h2, #comments .comment h2 { font-size: 30px; }
 
-.formatting h4, .post .post_content h4 { font-size: 18px; }
+.formatting h4, .post .post_content h4, #comments .comment h4 { font-size: 18px; }
 
-.formatting h5, .post .post_content h5 { font-size: 14px; }
+.formatting h5, .post .post_content h5, #comments .comment h5 { font-size: 14px; }
 
-.formatting h6, .post .post_content h6 { font-size: 12px; }
+.formatting h6, .post .post_content h6, #comments .comment h6 { font-size: 12px; }
 
-.formatting blockquote, .post .post_content blockquote { font-size: 22px; font-style: italic; margin: 15px; width: 90%; margin-left: 5%; color: #4FCCFC; }
+.formatting blockquote, .post .post_content blockquote, #comments .comment blockquote { font-size: 22px; font-style: italic; margin: 15px; width: 90%; margin-left: 5%; color: #4FCCFC; }
 
-.formatting table, .post .post_content table { width: 100%; margin-bottom: 30px; }
+.formatting table, .post .post_content table, #comments .comment table { width: 100%; margin-bottom: 30px; }
 
-.formatting table caption, .post .post_content table caption { margin-bottom: 10px; font-weight: 700; }
+.formatting table caption, .post .post_content table caption, #comments .comment table caption { margin-bottom: 10px; font-weight: 700; }
 
-.formatting table thead th, .post .post_content table thead th { font-weight: 700; padding-bottom: 5px; border-right: 1px solid #eee; border-bottom: 1px solid #eee; }
+.formatting table thead th, .post .post_content table thead th, #comments .comment table thead th { font-weight: 700; padding-bottom: 5px; border-right: 1px solid #eee; border-bottom: 1px solid #eee; }
 
-.formatting table thead th:last-child, .post .post_content table thead th:last-child { border-right: none; }
+.formatting table thead th:last-child, .post .post_content table thead th:last-child, #comments .comment table thead th:last-child { border-right: none; }
 
-.formatting table tbody, .post .post_content table tbody { text-align: center; font-size: 14px; font-weight: 300; }
+.formatting table tbody, .post .post_content table tbody, #comments .comment table tbody { text-align: center; font-size: 14px; font-weight: 300; }
 
-.formatting table tbody a, .post .post_content table tbody a { font-weight: 700; }
+.formatting table tbody a, .post .post_content table tbody a, #comments .comment table tbody a { font-weight: 700; }
 
-.formatting table tbody tr, .post .post_content table tbody tr { border-bottom: 1px solid #eee; }
+.formatting table tbody tr, .post .post_content table tbody tr, #comments .comment table tbody tr { border-bottom: 1px solid #eee; }
 
-.formatting table tbody tr:last-child, .post .post_content table tbody tr:last-child { border-bottom: none; }
+.formatting table tbody tr:last-child, .post .post_content table tbody tr:last-child, #comments .comment table tbody tr:last-child { border-bottom: none; }
 
-.formatting table tbody tr td, .post .post_content table tbody tr td { border-right: 1px solid #eee; padding: 7px; }
+.formatting table tbody tr td, .post .post_content table tbody tr td, #comments .comment table tbody tr td { border-right: 1px solid #eee; padding: 7px; }
 
-.formatting table tbody tr td:last-child, .post .post_content table tbody tr td:last-child { border-right: none; }
+.formatting table tbody tr td:last-child, .post .post_content table tbody tr td:last-child, #comments .comment table tbody tr td:last-child { border-right: none; }
 
-.formatting table tfoot, .post .post_content table tfoot { font-size: 14px; }
+.formatting table tfoot, .post .post_content table tfoot, #comments .comment table tfoot { font-size: 14px; }
 
-.formatting table tfoot #next, .post .post_content table tfoot #next { text-align: right; }
+.formatting table tfoot #next, .post .post_content table tfoot #next, #comments .comment table tfoot #next { text-align: right; }
 
-.formatting table a, .post .post_content table a { text-decoration: underline; }
+.formatting table a, .post .post_content table a, #comments .comment table a { text-decoration: underline; }
 
-.formatting table a:hover, .post .post_content table a:hover { text-decoration: none; }
+.formatting table a:hover, .post .post_content table a:hover, #comments .comment table a:hover { text-decoration: none; }
 
-.formatting table td#prev, .post .post_content table td#prev { padding-top: 10px; }
+.formatting table td#prev, .post .post_content table td#prev, #comments .comment table td#prev { padding-top: 10px; }
 
-.formatting table td#next, .post .post_content table td#next { padding-top: 10px; }
+.formatting table td#next, .post .post_content table td#next, #comments .comment table td#next { padding-top: 10px; }
 
-.formatting dl dd, .post .post_content dl dd { margin-left: 30px; }
+.formatting dl dd, .post .post_content dl dd, #comments .comment dl dd { margin-left: 30px; }
 
-.formatting ul, .post .post_content ul { list-style-type: initial; list-style-position: inside; }
+.formatting ul, .post .post_content ul, #comments .comment ul { list-style-type: initial; list-style-position: inside; }
 
-.formatting ul li, .post .post_content ul li { margin-left: 30px; }
+.formatting ul li, .post .post_content ul li, #comments .comment ul li { margin-left: 30px; }
 
-.formatting ol, .post .post_content ol { list-style-type: initial; list-style-position: inside; }
+.formatting ol, .post .post_content ol, #comments .comment ol { list-style-type: initial; list-style-position: inside; }
 
-.formatting ol li, .post .post_content ol li { margin-left: 30px; }
+.formatting ol li, .post .post_content ol li, #comments .comment ol li { margin-left: 30px; }
 
-.formatting address, .post .post_content address { font-style: italic; }
+.formatting address, .post .post_content address, #comments .comment address { font-style: italic; }
 
-.formatting strong, .post .post_content strong { font-weight: 700; }
+.formatting strong, .post .post_content strong, #comments .comment strong { font-weight: 700; }
 
-.formatting abbr, .post .post_content abbr, .formatting acronym, .post .post_content acronym { border-bottom: 1px dotted #eee; }
+.formatting abbr, .post .post_content abbr, #comments .comment abbr, .formatting acronym, .post .post_content acronym, #comments .comment acronym { border-bottom: 1px dotted #eee; }
 
-.formatting big, .post .post_content big { font-size: 24px; }
+.formatting big, .post .post_content big, #comments .comment big { font-size: 24px; }
 
-.formatting cite, .post .post_content cite { font-style: italic; }
+.formatting cite, .post .post_content cite, #comments .comment cite { font-style: italic; }
 
-.formatting code, .post .post_content code, .formatting kbd, .post .post_content kbd { background: #eee; padding: 5px; }
+.formatting code, .post .post_content code, #comments .comment code, .formatting kbd, .post .post_content kbd, #comments .comment kbd { background: #eee; padding: 5px; }
 
-.formatting pre, .post .post_content pre, .formatting code, .post .post_content code { width: 80%; padding: 2%; background: rgba(255, 255, 255, 0.1); white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; font-family: monospace; }
+.formatting pre, .post .post_content pre, #comments .comment pre, .formatting code, .post .post_content code, #comments .comment code { width: 80%; padding: 2%; background: rgba(255, 255, 255, 0.1); white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; font-family: monospace; }
 
-.formatting sub, .post .post_content sub, .formatting sup, .post .post_content sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+.formatting sub, .post .post_content sub, #comments .comment sub, .formatting sup, .post .post_content sup, #comments .comment sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 
-.formatting sup, .post .post_content sup { top: -0.5em; }
+.formatting sup, .post .post_content sup, #comments .comment sup { top: -0.5em; }
 
-.formatting sub, .post .post_content sub { bottom: -0.25em; }
+.formatting sub, .post .post_content sub, #comments .comment sub { bottom: -0.25em; }
 
-.formatting img, .post .post_content img { max-width: 100%; }
+.formatting img, .post .post_content img, #comments .comment img { max-width: 100%; }
 
-.formatting .wp-caption, .post .post_content .wp-caption { max-width: 100% !important; }
+.formatting .wp-caption, .post .post_content .wp-caption, #comments .comment .wp-caption { max-width: 100% !important; }
 
-.formatting img.alignright, .post .post_content img.alignright { float: right; margin: 0 0 30px 30px; }
+.formatting img.alignright, .post .post_content img.alignright, #comments .comment img.alignright { float: right; margin: 0 0 30px 30px; }
 
-.formatting img.alignleft, .post .post_content img.alignleft { float: left; margin: 0 30px 30px 0; }
+.formatting img.alignleft, .post .post_content img.alignleft, #comments .comment img.alignleft { float: left; margin: 0 30px 30px 0; }
 
-.formatting img.aligncenter, .post .post_content img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.formatting img.aligncenter, .post .post_content img.aligncenter, #comments .comment img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
-.formatting img.alignnone, .post .post_content img.alignnone { max-width: 100%; }
+.formatting img.alignnone, .post .post_content img.alignnone, #comments .comment img.alignnone { max-width: 100%; }
 
-.formatting .alignright, .post .post_content .alignright { float: right; }
+.formatting .alignright, .post .post_content .alignright, #comments .comment .alignright { float: right; }
 
-.formatting .alignleft, .post .post_content .alignleft { float: left; }
+.formatting .alignleft, .post .post_content .alignleft, #comments .comment .alignleft { float: left; }
 
-.formatting .aligncenter, .post .post_content .aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+.formatting .aligncenter, .post .post_content .aligncenter, #comments .comment .aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
 
 .post { width: 100%; background: #fff; box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2); margin-top: 80px; overflow: hidden; }
 
@@ -1723,6 +1723,10 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 #comments input[type=submit] { border: none !important; background: #4FCCFC; text-transform: uppercase; font-weight: 700 !important; padding: 20px !important; color: #fff; }
 
 #comments input[type=submit]:hover { background: #E65E24; cursor: pointer; }
+
+.tags_single { border: 1px solid rgba(0, 0, 0, 0.1); padding: 10px; font-size: 12px; }
+
+.tags_single a { font-style: italic; }
 
 @media screen and (min-width: 1366px) { .wrapper { width: 1366px; }
   #respond { width: 70%; margin-left: 15%; } }

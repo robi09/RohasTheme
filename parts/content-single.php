@@ -16,7 +16,9 @@
 
 			the_content(); 
 
-			the_tags();
+			echo '<div class="tags_single"><i class="fa fa-tags"></i> ';
+				the_tags();
+			echo '</div>';
 
 			wp_link_pages();
 
