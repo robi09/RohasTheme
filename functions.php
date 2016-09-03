@@ -11,6 +11,11 @@ if(!function_exists('rohas_theme_setup')) {
 			'height'        => 222,
 			'default-image' => get_template_directory_uri() . '/assets/images/header_image.jpg',
 			);
+		
+		$custom_logo_args = array(
+			'flex-height' => true,
+			'flex-width'  => true,
+		);
 
 			//Theme Support
 		add_theme_support( 'title-tag' );
@@ -18,6 +23,7 @@ if(!function_exists('rohas_theme_setup')) {
 		add_theme_support( 'custom-header', $custom_header_args );
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption') );
 		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'custom-logo', $custom_logo_args );
 
 			//Register navigation menu
 		register_nav_menus( array(
@@ -30,6 +36,7 @@ if(!function_exists('rohas_theme_setup')) {
 
 			// Imge sizes
 		add_image_size( 'rohas-post', 600, 600 );
+		add_image_size( 'rohas-single-image', 1366, 300 );
 
 			// Language
 		load_theme_textdomain('rohas-lite', get_template_directory() . '/languages'); 
@@ -126,4 +133,27 @@ if(!function_exists('rohas_prev_nav_filter')) {
 		return 'class="left"';
 	}
 	add_filter('previous_posts_link_attributes', 'rohas_prev_nav_filter', 10, 1);
+}
+
+if(!function_exists('rohas_get_logo')) {
+
+	/**
+	 * Output the website logo in header
+	 */
+	function rohas_get_logo() {
+		$default = '<a href="' . esc_url( get_home_url( '/' ) ) . '" title="' . get_bloginfo('name') . '" id="logo">
+				<h1>' . get_bloginfo('name') . '</h1>
+				<h2>' . get_bloginfo('description') . '</h2>
+			</a><!-- /#logo  -->';
+
+		if ( function_exists( 'the_custom_logo' ) ) {
+			if(get_custom_logo()) {
+				the_custom_logo();
+			} else {
+				echo $default;
+			}
+		} else {
+			echo $default;
+		}
+	}
 }

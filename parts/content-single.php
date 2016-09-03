@@ -1,6 +1,6 @@
 <article <?php post_class('post single-post'); ?>>
 	<?php
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'rohas-single-image' );
 	?>
 	<div class="post_content">
 		<?php 

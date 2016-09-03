@@ -32,6 +32,10 @@ module.exports = function(grunt) {
           css: {
             files: ['assets/scss/*.scss'],
             tasks: ['sass'],
+          },
+
+          php: {
+            files: ['**/*.php'],
           }
 
         },

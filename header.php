@@ -8,10 +8,7 @@
 <body <?php body_class(); ?>>
 	<header id="header" style="background-image: url(<?php esc_url(header_image()); ?>);">
 		<div class="overlay">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>" id="logo">
-				<h1><?php bloginfo('name'); ?></h1>
-				<h2><?php bloginfo('description'); ?></h2>
-			</a><!-- /#logo  -->
+			<?php rohas_get_logo(); ?>
 		</div><!-- / .overlay -->
 	</header><!-- /#header  -->
 	
