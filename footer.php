@@ -50,7 +50,7 @@
 				echo '</div><!-- / .wrapper -->';
 			}
 		?>
-		<div class="copyright"><?php bloginfo('name'); ?> © <?php echo date('Y'); ?>. All rights reserved.</div><!-- / .copyright -->
+		<div class="copyright"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?>. All rights reserved.</div><!-- / .copyright -->
 		<?php wp_footer(); ?>
 	</footer><!-- /#footer  -->
 </body>

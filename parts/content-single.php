@@ -10,7 +10,7 @@
 		?>
 		<div class="post_content">
 			<h3><?php the_title(); ?></h3>
-			<div class="post_meta"><?php echo the_time('F j, Y'); ?> -  <?php comments_number( 'no comments', 'one comment', '% comments' ); ?></div>
+			<div class="post_meta"><?php echo the_time('F j, Y'); ?> -  <?php printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'rohas-lite' ), number_format_i18n( get_comments_number() ) ); ?></div>
 
 			<?php 
 
@@ -21,7 +21,6 @@
 					the_tags();
 				echo '</div>';
 			}
-
 
 			wp_link_pages(array(
 				'before'           => '<p class="paginated_post"><b class="title">' . __( 'The story continues', 'rohas-lite' ) . '</b>',

@@ -4,39 +4,57 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rohas Lite 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-09-03 17:22+0300\n"
-"PO-Revision-Date: 2016-09-03 17:23+0300\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"POT-Creation-Date: 2016-09-03 21:55+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-03 21:56+0300\n"
+"Language-Team: \n"
 "X-Generator: Poedit 1.8.9\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"Language: en_US\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:21
+#: functions.php:24
 msgid "Header Menu"
 msgstr "Header Menu"
 
-#: functions.php:73
+#: functions.php:77
 msgid "Footer Sidebar One"
 msgstr "Footer Sidebar One"
 
-#: functions.php:83
+#: functions.php:87
 msgid "Footer Sidebar Two"
 msgstr "Footer Sidebar Two"
 
-#: functions.php:93
+#: functions.php:97
 msgid "Footer Sidebar Three"
 msgstr "Footer Sidebar Three"
+
+#: parts/content-post.php:16
+msgid "Read More"
+msgstr "Read More"
+
+#: parts/content-single.php:26
+msgid "The story continues"
+msgstr "The story continues"
+
+#: parts/navigation.php:6
+msgid "Previous"
+msgstr "Previous"
+
+#: parts/navigation.php:10
+msgid "Next"
+msgstr "Next"
+
+#: search.php:8
+msgid "Search results for"
+msgstr "Search results for"
 
 #. Theme Name of the plugin/theme
 msgid "Rohas Lite"
@@ -60,3 +78,10 @@ msgid "One comment"
 msgid_plural "%1$s comments"
 msgstr[0] "One comment"
 msgstr[1] "%1$s comments"
+
+#: parts/content-post.php:14 parts/content-single.php:13
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "One Comment"
+msgstr[1] "%1$s Comments"

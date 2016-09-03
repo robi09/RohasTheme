@@ -5,7 +5,7 @@ get_header();
 if ( have_posts() )  {
 
 	//Display the search title
-	echo '<h2 class="archive_title">' . sprintf( 'Search Results for: %s', get_search_query() ) . '</h2>';
+	echo '<h2 class="archive_title">' . sprintf( __('Search results for', 'rohas-lite') . ': %s', get_search_query() ) . '</h2>';
 
 	//Loop the query posts
 	while ( have_posts() ) : the_post();
