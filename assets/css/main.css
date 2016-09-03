@@ -1555,6 +1555,16 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 
 .formatting .aligncenter, .post .post_content .aligncenter, #comments .comment .aligncenter { display: block; margin-left: auto; margin-right: auto; text-align: center; }
 
+.paginated_post { width: 100%; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1); text-align: center; line-height: 40px; position: relative; }
+
+.paginated_post .title { display: block; position: absolute; top: -40px; color: rgba(0, 0, 0, 0.3); left: 0; right: 0; margin: auto; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+
+.paginated_post > span { font-weight: 700; }
+
+.paginated_post a, .paginated_post > span { border-left: 1px solid rgba(0, 0, 0, 0.1); padding: 10px 15px; }
+
+.paginated_post a:last-child, .paginated_post > span:last-child { border-right: 1px solid rgba(0, 0, 0, 0.1); }
+
 .post { width: 100%; background: #fff; box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2); margin-top: 80px; overflow: hidden; }
 
 .post.sticky { box-shadow: 0 0 0 11px #fff inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset, 0 0 40px 0 rgba(0, 0, 0, 0.2); }
@@ -1567,7 +1577,7 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 
 .post h3 { font-size: 28px; text-transform: uppercase; font-weight: 700; }
 
-.post .post_meta { opacity: 0.8; font-style: italic; font-weight: 300; margin-top: 10px; }
+.post .post_meta { opacity: 0.8; font-style: italic; font-weight: 300; margin-top: 10px; margin-bottom: 40px; }
 
 .post p { margin-top: 20px; }
 

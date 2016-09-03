@@ -22,7 +22,14 @@
 				echo '</div>';
 			}
 
-			wp_link_pages();
+
+			wp_link_pages(array(
+				'before'           => '<p class="paginated_post"><b class="title">' . __( 'The story continues', 'rohas-lite' ) . '</b>',
+				'after'            => '</p>',
+				'separator'		   => '',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			));
 
 			?>
 		</div><!-- / .post_content -->
