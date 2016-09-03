@@ -5,10 +5,7 @@
 
 .bgcover, #header, .post .featured_image { -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover; }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
@@ -1508,6 +1505,8 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 
 .formatting table td#next, .post .post_content table td#next, #comments .comment table td#next { padding-top: 10px; }
 
+.formatting ul, .post .post_content ul, #comments .comment ul, .formatting ol, .post .post_content ol, #comments .comment ol, .formatting dl, .post .post_content dl, #comments .comment dl { margin-bottom: 15px; }
+
 .formatting dl dd, .post .post_content dl dd, #comments .comment dl dd { margin-left: 30px; }
 
 .formatting ul, .post .post_content ul, #comments .comment ul { list-style-type: initial; list-style-position: inside; }
@@ -1558,7 +1557,7 @@ body { line-height: 26px; color: #30343D; background-image: url("../images/concr
 
 .post { width: 100%; background: #fff; box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2); margin-top: 80px; overflow: hidden; }
 
-.post.sticky { box-shadow: 0 0 0 11px #fff inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset; }
+.post.sticky { box-shadow: 0 0 0 11px #fff inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset, 0 0 40px 0 rgba(0, 0, 0, 0.2); }
 
 .post.page { margin-bottom: 80px; }
 

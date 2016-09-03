@@ -331,6 +331,10 @@ body {
 		}
 	}
 
+	ul, ol, dl {
+		margin-bottom: 15px;
+	}
+
 	dl {
 		dd {
 			margin-left: 30px;
@@ -463,7 +467,9 @@ body {
 	overflow: hidden;
 
 	&.sticky {
-		box-shadow: 0 0 0 11px #fff inset, 0 0 0 15px rgba(black, 0.05) inset;
+		box-shadow: 0 0 0 11px #fff inset, 
+					0 0 0 15px rgba(black, 0.05) inset,
+					0 0 40px 0 rgba(0, 0, 0, 0.2);
 	}
 
 	&.page {
