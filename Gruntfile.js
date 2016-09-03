@@ -13,7 +13,8 @@ module.exports = function(grunt) {
               sourceMap: false
             },
             files: {
-              'assets/css/main.css' : 'assets/scss/style.scss'
+              'assets/css/main.css' : 'assets/scss/style.scss',
+              'assets/css/custom-editor-style.css' : 'assets/scss/custom-editor-style.scss',
             }
           }
         },

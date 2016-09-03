@@ -157,3 +157,15 @@ if(!function_exists('rohas_get_logo')) {
 		}
 	}
 }
+
+
+if(!function_exists('rohas_editor_styles')) {
+
+	/**
+	 * Registers an editor stylesheet for the theme.
+	 */
+	function rohas_editor_styles() {
+	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.css' );
+	}
+	add_action( 'admin_init', 'rohas_editor_styles' );
+}
