@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         sass: {
           dist: {
             options: {                      
-              style: 'compressed'
+              outputStyle: 'compact',
+              sourceMap: false
             },
             files: {
               'assets/css/main.css' : 'assets/scss/style.scss'
@@ -35,17 +36,7 @@ module.exports = function(grunt) {
 
         },
 
-        sass: {
-          options: {                      
-              // outputStyle: 'compressed',
-              sourceMap: true,
-          },
-          dist: {
-            files: {
-              'assets/css/main.css' : 'assets/scss/style.scss',
-            }
-          }
-        },
+
 
     });
 

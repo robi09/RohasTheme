@@ -1,7 +1,7 @@
 @import "reset";
 @import "cf";
 @import "mixins";
-@import "colors";
+@import "colors"; 
 
 // Font awesome
 @import "fa/variables";
@@ -18,12 +18,11 @@
 @import "fa/icons";
 @import "fa/screen-reader";
 
-
 .roboto {
 	font-family: 'Roboto Slab', serif;
 }
 
-.handwritting {
+.handwritting { 
 	font-family: 'Just Another Hand', cursive;
 }
 
@@ -31,7 +30,7 @@ body {
 	@extend .roboto;
 	line-height: 26px;
 	color: $text;
-	background: url('../images/concrete_seamless.png');
+	background-image: url('../images/concrete_seamless.png');
 	font-size: 16px;
 }
 
@@ -419,7 +418,8 @@ body {
 }
 
 #footer {
-	background: $text url('../images/concrete_wall.png');
+	background-color: $text;
+	background-image: url('../images/concrete_wall.png');
 	color: $border;
 	overflow: hidden;
 	padding-bottom: 40px;
