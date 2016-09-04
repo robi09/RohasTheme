@@ -7,7 +7,10 @@ while ( have_posts() ) : the_post();
 	get_template_part( 'parts/content-single' );
 
 	//Navigation
+
 	echo '<div class="navigation">';
+
+	do_action('rohas_posts_navigation_top');
 
 	$previous_post = get_previous_post();
 	if ( $previous_post ) {
@@ -18,9 +21,12 @@ while ( have_posts() ) : the_post();
 	if ( $next_post ) {
 		echo '<a class="right" href="'.get_permalink( $next_post->ID ).'">'.$next_post->post_title.'<i class="fa fa-angle-double-right"></i></a>'; 
 	}
+	
+	do_action('rohas_posts_navigation_bottom');
+
 	echo '</div>';
 
-	//Get comments
+	// Display comments
 	if ( comments_open() || get_comments_number() ) :
 		comments_template();
 	endif;
