@@ -58,6 +58,8 @@ if(!function_exists('rohas_styles')) {
 	 * Add theme stylesheets
 	 */
 	function rohas_styles() {
+    	wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', '1.0');
+    	wp_enqueue_style( 'just-another-hand', 'https://fonts.googleapis.com/css?family=Just+Another+Hand', '1.0');
 		wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
 		if( is_singular() ) {
@@ -158,6 +160,7 @@ if(!function_exists('rohas_editor_styles')) {
 	 * Registers an editor stylesheet for the theme.
 	 */
 	function rohas_editor_styles() {
+    	add_editor_style( 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
 	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.css' );
 	}
 	add_action( 'admin_init', 'rohas_editor_styles' );
