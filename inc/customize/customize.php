@@ -50,6 +50,13 @@ Kirki::add_section( 'rohas_ads_others', array(
     'capability'     => 'edit_theme_options',
 ) );
 
+Kirki::add_section( 'rohas_social', array(
+    'title'          => __( 'Social media', 'rohas-lite' ),
+    'description'    => __( 'Add social media links.', 'rohas-lite' ),
+    'capability'     => 'edit_theme_options',
+) );
+
 require get_template_directory() . '/inc/customize/design_colors.php';
 require get_template_directory() . '/inc/customize/sidebar.php';
 require get_template_directory() . '/inc/customize/ads.php';
+require get_template_directory() . '/inc/customize/social.php';

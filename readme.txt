@@ -25,6 +25,10 @@ Google Webfonts
 Roboto - Open Source, Copyright 2011 Google Inc. All Rights Reserved.
 Just Another Hand - Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence.
 
+Kirki
+Copyright (c) 2016 Aristeides Stathopoulos- MIT License
+https://github.com/aristath/kirki/blob/master/LICENSE 
+
 = Action Hooks =
 rohas_body_top - For bottom part of the body please use 'wp_footer' hook
 
@@ -79,8 +83,8 @@ rohas_navigation_bottom
 rohas_404_before
 rohas_404_after
 
-rohas_social_icons_start
-rohas_social_icons_end
+rohas_social_icons_start - Displayed only if social links are added
+rohas_social_icons_end - Displayed only if social links are added
 
 rohas_header_searchform_before
 rohas_header_searchform_after
