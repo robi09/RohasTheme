@@ -193,7 +193,11 @@ if(!function_exists('rohas_sidebar_position')) {
 	}
 }
 
-/**
- * Custom template tags for this theme.
- */
+// Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
+
+// Kirki library - v2.3.6
+include_once( dirname( __FILE__ ) . '/inc/kirki/kirki.php' );
+
+// Customize fields
+require get_template_directory() . '/inc/customize/customize.php';
