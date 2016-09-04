@@ -1,6 +1,15 @@
 <?php 
+/**
+ * The template for displaying archive pages.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package rohas
+ */
 
 get_header();
+
+echo '<div id="main_content" class="'.esc_attr(rohas_get_sidebar_position('content')).'">';
 
 if ( have_posts() )  {
 
@@ -21,6 +30,8 @@ if ( have_posts() )  {
 	get_template_part( 'parts/content', 'none' );
 }
 
-get_footer(); 
+echo '</div>';
 
-?>
+get_sidebar();
+
+get_footer(); 

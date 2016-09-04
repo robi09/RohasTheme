@@ -1,10 +1,17 @@
 <?php
-
 /**
- * Sets up theme defaults and registers support for various WordPress features.
+ * rohas functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package rohas
  */
+
 if(!function_exists('rohas_theme_setup')) {
 
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 */
 	function rohas_theme_setup() {
 
 		$custom_header_args = array(
@@ -45,12 +52,14 @@ if(!function_exists('rohas_theme_setup')) {
 	add_action( 'after_setup_theme', 'rohas_theme_setup' );
 }
 
-/**
- * Add theme stylesheets
- */
 if(!function_exists('rohas_styles')) {
 
+	/**
+	 * Add theme stylesheets
+	 */
 	function rohas_styles() {
+    	wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', '1.0');
+    	wp_enqueue_style( 'just-another-hand', 'https://fonts.googleapis.com/css?family=Just+Another+Hand', '1.0');
 		wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
 		if( is_singular() ) {
@@ -60,23 +69,23 @@ if(!function_exists('rohas_styles')) {
 	add_action( 'wp_enqueue_scripts', 'rohas_styles' );
 }
 
-/**
- * Add theme scripts
- */
 if(!function_exists('rohas_scripts')) {
 
+	/**
+	 * Add theme scripts
+	 */
 	function rohas_scripts() {
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0', true );
 	}
 	add_action( 'wp_enqueue_scripts', 'rohas_scripts' );
 }
 
-/**
- * Register sidebars
- */
 
 if(!function_exists('rohas_sidebars')) {
 
+	/**
+	 * Register sidebars
+	 */
 	function rohas_sidebars() {
 
 		$footer_sidebar_one = array(
@@ -109,55 +118,41 @@ if(!function_exists('rohas_sidebars')) {
 		);
 		register_sidebar( $footer_sidebar_three );
 
+		$main_sidebar = array(
+			'id'			=> 'main_sidebar',
+			'name'			=> __( 'Main Sidebar', 'rohas-lite' ),
+			'before_widget' => '<div class="widget %2$s" id="%1$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="widget_title">',
+			'after_title'   => '</div>',
+		);
+		register_sidebar( $main_sidebar );
+
 	}
 	add_action( 'widgets_init', 'rohas_sidebars' );
 }
 
-/**
- * Add right class to navigation
- */
 if(!function_exists('rohas_next_nav_filter')) {
 
+	/**
+	 * Add right class to navigation
+	 */
 	function rohas_next_nav_filter(){
 		return 'class="right"';
 	}
 	add_filter('next_posts_link_attributes', 'rohas_next_nav_filter', 10, 1);
 }
 
-/**
- * Add left class to navigation
- */
 if(!function_exists('rohas_prev_nav_filter')) {
 
+	/**
+	 * Add left class to navigation
+	 */
 	function rohas_prev_nav_filter(){
 		return 'class="left"';
 	}
 	add_filter('previous_posts_link_attributes', 'rohas_prev_nav_filter', 10, 1);
 }
-
-if(!function_exists('rohas_get_logo')) {
-
-	/**
-	 * Output the website logo in header
-	 */
-	function rohas_get_logo() {
-		$default = '<a href="' . esc_url( get_home_url( '/' ) ) . '" title="' . get_bloginfo('name') . '" id="logo">
-				<h1>' . get_bloginfo('name') . '</h1>
-				<h2>' . get_bloginfo('description') . '</h2>
-			</a><!-- /#logo  -->';
-
-		if ( function_exists( 'the_custom_logo' ) ) {
-			if(get_custom_logo()) {
-				the_custom_logo();
-			} else {
-				echo $default;
-			}
-		} else {
-			echo $default;
-		}
-	}
-}
-
 
 if(!function_exists('rohas_editor_styles')) {
 
@@ -165,7 +160,40 @@ if(!function_exists('rohas_editor_styles')) {
 	 * Registers an editor stylesheet for the theme.
 	 */
 	function rohas_editor_styles() {
+    	add_editor_style( 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
 	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.css' );
 	}
 	add_action( 'admin_init', 'rohas_editor_styles' );
 }
+
+if(!function_exists('rohas_sidebar_position')) {
+	function rohas_get_sidebar_position($location) {
+		$sidebar_position = array(
+				'content' => 'left',
+				'sidebar' => 'right',
+			);
+
+		if(is_active_sidebar('main_sidebar')) {
+			if(get_theme_mod('rohas_sidebar_position') == 'left') {
+				$sidebar_position['sidebar'] = 'left';
+				$sidebar_position['content'] = 'right';
+			}
+		} else {
+			$sidebar_position['sidebar'] = null;
+			$sidebar_position['content'] = 'no_sidebar';
+		}
+
+		if($location == 'sidebar') {
+			return $sidebar_position['sidebar'];
+		} elseif($location == 'content') {
+			return $sidebar_position['content'];
+		} else {
+			$sidebar_position;
+		}
+	}
+}
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
