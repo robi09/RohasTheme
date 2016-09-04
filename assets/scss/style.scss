@@ -1018,6 +1018,10 @@ body {
 	&.no_sidebar {
 		width: 100%;
 	}
+
+	&.error_page {
+		margin-bottom: 80px;
+	}
 }
 
 #sidebar {

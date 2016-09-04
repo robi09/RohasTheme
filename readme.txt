@@ -77,6 +77,9 @@ rohas_single_tags_after - Displayed only if post has tags
 rohas_navigation_top
 rohas_navigation_bottom
 
+rohas_404_before
+rohas_404_after
+
 = Changelog =
 
 v1.1.0 
