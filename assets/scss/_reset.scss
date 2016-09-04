@@ -52,6 +52,7 @@ table {
 a {
 	@extend .transition;
 	color: $text;
+	text-decoration: none;
 
 	&:hover {
 		color: $hover;

@@ -459,6 +459,10 @@ body {
 		margin-right: auto;
 		text-align: center;
 	}
+
+	a {
+		text-decoration: underline;
+	}
 }
 
 .paginated_post {
@@ -520,7 +524,7 @@ body {
 		@extend .bgcover;
 		background-position: center center;
 		overflow: hidden;
-		background-position: center center;
+		margin-bottom: 40px;
 	}
 
 	.post_content {

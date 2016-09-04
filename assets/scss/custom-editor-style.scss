@@ -18,6 +18,7 @@ body#tinymce.wp-editor {
 	a {
 		@extend .transition;
 		color: $text;
+		text-decoration: underline;
 
 		&:hover {
 			color: $hover;
