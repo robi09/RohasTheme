@@ -193,11 +193,6 @@ if(!function_exists('rohas_sidebar_position')) {
 	}
 }
 
-// deasupra titlului la comentarii
-// sub navigarea de pe paginii
-// 4 banners in sidebar
-// deasupra la copyright in footer
-
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
