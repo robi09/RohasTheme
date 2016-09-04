@@ -81,5 +81,11 @@ rohas_404_after
 
 = Changelog =
 
+v1.1.2
+- WordPress theme review team fixes
+
+v1.1.1
+- WordPress repo upload fixes
+
 v1.1.0 
 - First release
