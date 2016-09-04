@@ -62,14 +62,20 @@ rohas_comments_form_before - Use 'rohas_comments_after' hook to trigger the a fu
 rohas_posts_navigation_bottom
 rohas_posts_navigation_top
 
-rohas_single_content_before
-rohas_single_content_after
+rohas_single_post_content_before
+rohas_single_post_content_after
+
+rohas_page_content_before
+rohas_page_content_after
 
 rohas_single_featured_image_before - Displayed only if the post has featured image
 rohas_single_featured_image_after - Displayed only if the post has featured image
 
 rohas_single_tags_before - Displayed only if post has tags
 rohas_single_tags_after - Displayed only if post has tags
+
+rohas_navigation_top
+rohas_navigation_bottom
 
 = Changelog =
 

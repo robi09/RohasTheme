@@ -1,4 +1,11 @@
 <?php 
+/**
+ * The template for displaying archive pages.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package rohas
+ */
 
 get_header();
 
@@ -22,5 +29,3 @@ if ( have_posts() )  {
 }
 
 get_footer(); 
-
-?>
