@@ -9,6 +9,8 @@
 
 get_header();
 
+echo '<div id="main_content" class="'.esc_attr(rohas_get_sidebar_position('content')).'">';
+
 if ( have_posts() )  {
 
 	//Display the search title
@@ -27,6 +29,10 @@ if ( have_posts() )  {
 } else {
 	get_template_part( 'parts/content', 'none' );
 }
+
+echo '</div>';
+
+get_sidebar();
 
 get_footer(); 
 

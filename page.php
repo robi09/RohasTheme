@@ -14,12 +14,19 @@
 
 get_header(); 
 
+echo '<div id="main_content" class="'.esc_attr(rohas_get_sidebar_position('content')).'">';
+
 while ( have_posts() ) : the_post();
 	
 	//Get page content
 	get_template_part( 'parts/content-page' );
 
 endwhile;
+
+echo '</div>';
+
+get_sidebar();
+
 get_footer(); 
 
 ?>

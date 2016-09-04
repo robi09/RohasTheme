@@ -9,6 +9,8 @@
 
 get_header(); 
 
+echo '<div id="main_content" class="'.esc_attr(rohas_get_sidebar_position('content')).'">';
+
 while ( have_posts() ) : the_post();
 	
 	//Get single content
@@ -40,4 +42,9 @@ while ( have_posts() ) : the_post();
 	endif;
 
 endwhile;
+
+echo '</div>';
+
+get_sidebar();
+
 get_footer(); ?>

@@ -116,6 +116,16 @@ if(!function_exists('rohas_sidebars')) {
 		);
 		register_sidebar( $footer_sidebar_three );
 
+		$main_sidebar = array(
+			'id'			=> 'main_sidebar',
+			'name'			=> __( 'Main Sidebar', 'rohas-lite' ),
+			'before_widget' => '<div class="widget %2$s" id="%1$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="widget_title">',
+			'after_title'   => '</div>',
+		);
+		register_sidebar( $main_sidebar );
+
 	}
 	add_action( 'widgets_init', 'rohas_sidebars' );
 }
@@ -151,6 +161,33 @@ if(!function_exists('rohas_editor_styles')) {
 	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.css' );
 	}
 	add_action( 'admin_init', 'rohas_editor_styles' );
+}
+
+if(!function_exists('rohas_sidebar_position')) {
+	function rohas_get_sidebar_position($location) {
+		$sidebar_position = array(
+				'content' => 'left',
+				'sidebar' => 'right',
+			);
+
+		if(is_active_sidebar('main_sidebar')) {
+			if(get_theme_mod('rohas_sidebar_position') == 'left') {
+				$sidebar_position['sidebar'] = 'left';
+				$sidebar_position['content'] = 'right';
+			}
+		} else {
+			$sidebar_position['sidebar'] = null;
+			$sidebar_position['content'] = 'no_sidebar';
+		}
+
+		if($location == 'sidebar') {
+			return $sidebar_position['sidebar'];
+		} elseif($location == 'content') {
+			return $sidebar_position['content'];
+		} else {
+			$sidebar_position;
+		}
+	}
 }
 
 /**
