@@ -79,7 +79,21 @@ rohas_navigation_bottom
 rohas_404_before
 rohas_404_after
 
+rohas_social_icons_start
+rohas_social_icons_end
+
+rohas_header_searchform_before
+rohas_header_searchform_after
+
 = Changelog =
+
+v1.2.0 
+- Main sidebar introduced
+- Colors customization
+- Ads spaces
+- Hooks added
+- WordPress review fixes
+- Quick fixes and code cleaning
 
 v1.1.0 
 - First release

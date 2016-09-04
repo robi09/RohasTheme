@@ -175,12 +175,12 @@ if(!function_exists('rohas_sidebar_position')) {
 
 		if(is_active_sidebar('main_sidebar')) {
 			if(get_theme_mod('rohas_sidebar_position') == 'left') {
-				$sidebar_position['sidebar'] = 'left';
 				$sidebar_position['content'] = 'right';
+				$sidebar_position['sidebar'] = 'left';
 			}
 		} else {
-			$sidebar_position['sidebar'] = null;
 			$sidebar_position['content'] = 'no_sidebar';
+			$sidebar_position['sidebar'] = null;
 		}
 
 		if($location == 'sidebar') {
@@ -193,7 +193,11 @@ if(!function_exists('rohas_sidebar_position')) {
 	}
 }
 
-/**
- * Custom template tags for this theme.
- */
+// Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
+
+// Kirki library - v2.3.6
+include_once( dirname( __FILE__ ) . '/inc/kirki/kirki.php' );
+
+// Customize fields
+require get_template_directory() . '/inc/customize/customize.php';
