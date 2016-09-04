@@ -10,14 +10,27 @@
 ?>
 <div id="header_top">
 	<div class="wrapper">
-		<ul class="social_links">
-			<?php do_action('rohas_social_icons_start'); ?>
-			<li><a href=""><i class="fa fa-facebook"></i></a></li>
-			<li><a href=""><i class="fa fa-facebook"></i></a></li>
-			<li><a href=""><i class="fa fa-facebook"></i></a></li>
-			<li><a href=""><i class="fa fa-facebook"></i></a></li>
-			<?php do_action('rohas_social_icons_end'); ?>
-		</ul><!-- / .social_links -->
+		
+		<?php 
+		$social_links = get_theme_mod('rohas_social_links');
+
+		if($social_links) {
+			echo '<ul class="social_links">';
+
+			do_action('rohas_social_icons_start'); 
+
+			foreach($social_links as $icon) {
+				if( !empty($icon['icon']) and !empty($icon['url']) ) {
+					echo '<li><a href="'.esc_url($icon['url']).'"><i class="fa fa-'.esc_attr($icon['icon']).'"></i></a></li>';
+				}
+			}
+
+			do_action('rohas_social_icons_end');
+
+			echo '</ul><!-- / .social_links -->';
+		}
+
+		?>
 
 		<form action="<?php echo esc_url(home_url( '/' )); ?>" role="search" method="get" id="search_form_header">
 			<?php do_action('rohas_header_searchform_before'); ?>

@@ -83,8 +83,8 @@ rohas_navigation_bottom
 rohas_404_before
 rohas_404_after
 
-rohas_social_icons_start
-rohas_social_icons_end
+rohas_social_icons_start - Displayed only if social links are added
+rohas_social_icons_end - Displayed only if social links are added
 
 rohas_header_searchform_before
 rohas_header_searchform_after

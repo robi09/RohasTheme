@@ -21,7 +21,8 @@
 	<header id="header" style="background-image: url(<?php esc_url(header_image()); ?>);">
 		<div class="overlay">
 			<?php 
-	get_template_part('parts/header-top-bar');
+			
+			get_template_part('parts/header-top-bar');
 			
 			do_action('rohas_header_logo_before');
 
