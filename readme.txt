@@ -87,5 +87,13 @@ rohas_header_searchform_after
 
 = Changelog =
 
+v1.2.0 
+- Main sidebar introduced
+- Colors customization
+- Ads spaces
+- Hooks added
+- WordPress review fixes
+- Quick fixes and code cleaning
+
 v1.1.0 
 - First release
