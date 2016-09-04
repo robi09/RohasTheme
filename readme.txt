@@ -26,8 +26,7 @@ Roboto - Open Source, Copyright 2011 Google Inc. All Rights Reserved.
 Just Another Hand - Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence.
 
 = Action Hooks =
-rohas_body_top
-rohas_bottom_body
+rohas_body_top - For bottom part of the body please use 'wp_footer' hook
 
 rohas_wrapper_top
 rohas_wrapper_bottom

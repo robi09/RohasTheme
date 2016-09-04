@@ -81,9 +81,8 @@ do_action('rohas_wrapper_bottom'); ?>
 
 			do_action('rohas_footer_bottom');
 		?>
-		<div class="copyright"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?>. All rights reserved.</div><!-- / .copyright -->
-		<?php wp_footer(); ?>
+		<div class="copyright"><?php esc_html(bloginfo('name')); ?> &copy; <?php echo date('Y'); ?>. <?php _e('All rights reserved.', 'rohas-lite'); ?></div><!-- / .copyright -->
 	</footer><!-- /#footer  -->
-	<?php do_action('rohas_body_bottom'); ?>
+	<?php wp_footer(); ?>
 </body>
 </html>
