@@ -507,6 +507,8 @@ body {
 	margin-top: 80px;
 	overflow: hidden;
 
+	
+
 	&.sticky {
 		box-shadow: 0 0 0 11px #fff inset, 
 					0 0 0 15px rgba(black, 0.05) inset,
@@ -524,7 +526,6 @@ body {
 		@extend .bgcover;
 		background-position: center center;
 		overflow: hidden;
-		margin-bottom: 40px;
 	}
 
 	.post_content {
@@ -532,7 +533,7 @@ body {
 		padding: 40px;
 		@extend .borderbox;
 		float: left;
-		@extend .formatting;
+
 	}
 
 	h3 {
@@ -842,11 +843,13 @@ body {
 		width: 100%;
 		float: none;
 		height: 300px;
+		margin-bottom: 40px;
 	}
 
 	.post_content {
 		width: 100%;
 		float: none;
+		@extend .formatting;
 	}
 
 
