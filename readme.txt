@@ -91,6 +91,9 @@ rohas_header_searchform_after
 
 = Changelog =
 
+v1.2.1 
+- Social media links introduced
+
 v1.2.0 
 - Main sidebar introduced
 - Colors customization
