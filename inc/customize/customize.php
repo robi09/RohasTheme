@@ -25,4 +25,11 @@ Kirki::add_section( 'rohas_design_colors', array(
     'capability'     => 'edit_theme_options',
 ) );
 
+Kirki::add_section( 'rohas_sidebar', array(
+    'title'          => __( 'Sidebar', 'rohas-lite' ),
+    'description'    => __( 'Sidebar settings.', 'rohas-lite' ),
+    'capability'     => 'edit_theme_options',
+) );
+
 require get_template_directory() . '/inc/customize/design_colors.php';
+require get_template_directory() . '/inc/customize/sidebar.php';

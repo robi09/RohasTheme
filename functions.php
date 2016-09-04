@@ -175,12 +175,12 @@ if(!function_exists('rohas_sidebar_position')) {
 
 		if(is_active_sidebar('main_sidebar')) {
 			if(get_theme_mod('rohas_sidebar_position') == 'left') {
-				$sidebar_position['sidebar'] = 'left';
 				$sidebar_position['content'] = 'right';
+				$sidebar_position['sidebar'] = 'left';
 			}
 		} else {
-			$sidebar_position['sidebar'] = null;
 			$sidebar_position['content'] = 'no_sidebar';
+			$sidebar_position['sidebar'] = null;
 		}
 
 		if($location == 'sidebar') {
