@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
         // Production files
         sass: {
-          dist: {
+          prod: {
             options: {                      
               outputStyle: 'compressed',
               sourceMap: false
@@ -17,12 +17,8 @@ module.exports = function(grunt) {
               'assets/css/concat/main.min.css' : 'assets/scss/main.scss',
               'assets/css/custom-editor-style.min.css' : 'assets/scss/custom-editor-style.scss',
             }
-          }
-        },
-
-        // Development files
-        sass: {
-          dist: {
+          },
+          dev: {
             options: {                      
               outputStyle: 'expanded',
               sourceMap: true
@@ -33,6 +29,11 @@ module.exports = function(grunt) {
             }
           }
         },
+
+        // Development files
+        // sass: {
+          
+        // },
 
         watch: {
 
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
 
           css: {
             files: ['assets/scss/*.scss'],
-            tasks: ['sass'],
+            tasks: ['sass', 'concat_css'],
           },
 
           php: {

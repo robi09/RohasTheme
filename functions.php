@@ -60,6 +60,7 @@ if(!function_exists('rohas_styles')) {
 	function rohas_styles() {
     	wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', '1.0');
     	wp_enqueue_style( 'just-another-hand', 'https://fonts.googleapis.com/css?family=Just+Another+Hand', '1.0');
+    	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', '1.0');
 		wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
 		if( is_singular() ) {
