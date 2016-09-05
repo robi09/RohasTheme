@@ -155,7 +155,7 @@ svg {
 body {
   line-height: 26px;
   color: #30343D;
-  background-image: url("../images/concrete_seamless.png");
+  background-image: url("assets/images/concrete_seamless.png");
   font-size: 16px;
 }
 
@@ -694,7 +694,7 @@ body {
 
 #footer {
   background-color: #30343D;
-  background-image: url("../images/concrete_wall.png");
+  background-image: url("assets/images/concrete_wall.png");
   color: #eee;
   overflow: hidden;
   padding-bottom: 40px;

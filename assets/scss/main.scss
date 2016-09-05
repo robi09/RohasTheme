@@ -15,7 +15,7 @@ body {
 	@extend .roboto;
 	line-height: 26px;
 	color: $text;
-	background-image: url('../images/concrete_seamless.png');
+	background-image: url('assets/images/concrete_seamless.png');
 	font-size: 16px;
 }
 
@@ -576,7 +576,7 @@ body {
 
 #footer {
 	background-color: $text;
-	background-image: url('../images/concrete_wall.png');
+	background-image: url('assets/images/concrete_wall.png');
 	color: $border;
 	overflow: hidden;
 	padding-bottom: 40px;
