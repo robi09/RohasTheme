@@ -161,7 +161,7 @@ if(!function_exists('rohas_editor_styles')) {
 	 */
 	function rohas_editor_styles() {
     	add_editor_style( 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
-	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.css' );
+	    add_editor_style( get_template_directory_uri() . '/assets/css/custom-editor-style.min.css' );
 	}
 	add_action( 'admin_init', 'rohas_editor_styles' );
 }

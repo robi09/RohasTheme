@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // Production files
         sass: {
           dist: {
             options: {                      
@@ -13,7 +14,21 @@ module.exports = function(grunt) {
               sourceMap: false
             },
             files: {
-              'assets/css/main.css' : 'assets/scss/style.scss',
+              'assets/css/concat/main.min.css' : 'assets/scss/main.scss',
+              'assets/css/custom-editor-style.min.css' : 'assets/scss/custom-editor-style.scss',
+            }
+          }
+        },
+
+        // Development files
+        sass: {
+          dist: {
+            options: {                      
+              outputStyle: 'expanded',
+              sourceMap: true
+            },
+            files: {
+              'assets/css/main.css' : 'assets/scss/main.scss',
               'assets/css/custom-editor-style.css' : 'assets/scss/custom-editor-style.scss',
             }
           }
@@ -61,7 +76,17 @@ module.exports = function(grunt) {
                   updatePoFiles: true              // Whether to update PO files in the same directory as the POT file.
               }
           }
-      }
+      },
+
+      concat_css: {
+        options: {
+          // Task-specific options go here. 
+        },
+        all: {
+          src: ["assets/css/concat/*.css"],
+          dest: "style.css"
+        },
+      },
 
 
     });
