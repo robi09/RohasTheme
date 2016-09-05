@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
           css: {
             files: ['assets/scss/*.scss'],
-            tasks: ['sass', 'concat_css'],
+            tasks: ['sass', 'concat_css', 'lineending'],
           },
 
           php: {
@@ -88,6 +88,18 @@ module.exports = function(grunt) {
           dest: "style.css"
         },
       },
+
+      lineending: {
+        dist: {
+          options: {
+            eol: 'crlf',
+            overwrite: true
+          },
+          files: {
+            '': ['style.css']
+          }
+        }
+      }
 
 
     });
