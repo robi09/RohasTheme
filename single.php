@@ -24,12 +24,12 @@ while ( have_posts() ) : the_post();
 
 	$previous_post = get_previous_post();
 	if ( $previous_post ) {
-		echo '<a class="left" href="'.get_permalink( $previous_post->ID ).'"><i class="fa fa-angle-double-left"></i>'.$previous_post->post_title.'</a>'; 
+		echo '<a class="left" href="'.esc_url(get_permalink( $previous_post->ID )).'"><i class="fa fa-angle-double-left"></i>'.esc_html($previous_post->post_title).'</a>'; 
 	}
 
 	$next_post = get_next_post();
 	if ( $next_post ) {
-		echo '<a class="right" href="'.get_permalink( $next_post->ID ).'">'.$next_post->post_title.'<i class="fa fa-angle-double-right"></i></a>'; 
+		echo '<a class="right" href="'.esc_url(get_permalink( $next_post->ID )).'">'.esc_html($next_post->post_title).'<i class="fa fa-angle-double-right"></i></a>'; 
 	}
 	
 	do_action('rohas_posts_navigation_bottom');
