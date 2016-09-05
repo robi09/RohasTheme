@@ -91,6 +91,10 @@ rohas_header_searchform_after
 
 = Changelog =
 
+v1.2.3
+- GruntJS update
+- Small fixes
+
 v1.2.1 
 - Social media links introduced
 
