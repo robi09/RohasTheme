@@ -91,6 +91,9 @@ rohas_header_searchform_after
 
 = Changelog =
 
+v1.2.4
+- Small fixes
+
 v1.2.3
 - GruntJS update
 - Small fixes
