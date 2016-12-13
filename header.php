@@ -27,7 +27,9 @@
 			do_action('rohas_header_logo_before');
 
 			// Display logo
+			echo '<div class="logo_wrapper">';
 			rohas_get_logo(); 
+			echo '</div>';
 
 			do_action('rohas_header_logo_after');
 

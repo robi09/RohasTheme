@@ -13,6 +13,7 @@ if(!function_exists('rohas_get_logo')) {
 	 * Output the website logo in header
 	 */
 	function rohas_get_logo() {
+
 		$default = '<a href="' . esc_url( get_home_url( '/' ) ) . '" title="' . get_bloginfo('name') . '" id="logo">
 				<h1>' . get_bloginfo('name') . '</h1>
 				<h2>' . get_bloginfo('description') . '</h2>

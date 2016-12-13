@@ -2,7 +2,7 @@
 
 Kirki::add_field( 'rohas', array(
 	'type'        => 'repeater',
-	'setting'     => 'rohas_social_links',
+	'settings'     => 'rohas_social_links',
 	'label'       => esc_attr__( 'Add social icon', 'rohas-lite' ),
 	'section'     => 'rohas_social',
 	'fields' => array(
