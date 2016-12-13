@@ -60,3 +60,23 @@ require get_template_directory() . '/inc/customize/design_colors.php';
 require get_template_directory() . '/inc/customize/sidebar.php';
 require get_template_directory() . '/inc/customize/ads.php';
 require get_template_directory() . '/inc/customize/social.php';
+
+/**
+ * Add custom selective refresh
+ *
+ * @since v1.3
+ */
+function rohas_selective_refresh( WP_Customize_Manager $wp_customize ) {
+ 
+    // Abort if selective refresh is not available.
+    if ( ! isset( $wp_customize->selective_refresh ) ) {
+        return;
+    }
+
+    $wp_customize->selective_refresh->add_partial( 'custom_logo', array(
+        'selector' => '.logo_wrapper',
+        'settings' => array( 'custom_logo' ),
+        'render_callback' => 'rohas_get_logo',
+    ) );
+}
+add_action( 'customize_register', 'rohas_selective_refresh' );
