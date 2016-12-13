@@ -10,7 +10,7 @@
 ?>
 <article <?php post_class('post'); ?>>
 
-	<div class="post_content"<?php echo $full_width; ?>>
+	<div class="post_content" class="no_sidebar">
 		<h3><?php esc_html_e( 'Nothing Found', 'rohas-lite' ); ?></h3>
 	</div><!-- / .post_content -->
 </article><!-- / .post -->

@@ -90,6 +90,18 @@ rohas_header_searchform_before
 rohas_header_searchform_after
 
 = Changelog =
+v1.3.0
+- Small fixes
+- Logo selective refresh fix
+- Selective refresh for widgets added
+- Video header support added
+
+v1.2.4
+- Small fixes
+
+v1.2.3
+- GruntJS update
+- Small fixes
 
 v1.2.1 
 - Social media links introduced

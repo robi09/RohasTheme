@@ -3,21 +3,6 @@
 @import "mixins";
 @import "colors"; 
 
-// Font awesome
-@import "fa/variables";
-@import "fa/mixins";
-@import "fa/path";
-@import "fa/core";
-@import "fa/larger";
-@import "fa/fixed-width";
-@import "fa/list";
-@import "fa/bordered-pulled";
-@import "fa/animated";
-@import "fa/rotated-flipped";
-@import "fa/stacked";
-@import "fa/icons";
-@import "fa/screen-reader";
-
 .roboto {
 	font-family: 'Roboto Slab', serif;
 }
@@ -30,7 +15,7 @@ body {
 	@extend .roboto;
 	line-height: 26px;
 	color: $text;
-	background-image: url('../images/concrete_seamless.png');
+	background-image: url('assets/images/concrete_seamless.png');
 	font-size: 16px;
 }
 
@@ -44,11 +29,22 @@ body {
 	width: 100%;
 	overflow: hidden;
 	background-position: center center;
+	position: relative;
+
+	.wp-custom-header {
+		z-index: 1;
+
+		button {
+			display: none;
+		}
+	}
 
 	.overlay {
 		background-color: rgba($headline, 0.7);
 		overflow: hidden;
 		width: 100%;
+		position: relative;
+		z-index: 2;
 	}
 }
 
@@ -591,7 +587,7 @@ body {
 
 #footer {
 	background-color: $text;
-	background-image: url('../images/concrete_wall.png');
+	background-image: url('assets/images/concrete_wall.png');
 	color: $border;
 	overflow: hidden;
 	padding-bottom: 40px;
@@ -1388,4 +1384,15 @@ a img.aligncenter {
 
  .bypostauthor {
  	font-weight: bold;
+ }
+
+ .wp-custom-header {
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+
+ 	iframe {
+ 		width: 100%;
+ 		height: 100%;
+ 	}
  }

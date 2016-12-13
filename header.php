@@ -19,6 +19,13 @@
 <body <?php body_class(); ?>>
 	<?php do_action('rohas_body_top'); ?>
 	<header id="header" style="background-image: url(<?php esc_url(header_image()); ?>);">
+		<?php
+		
+		if(is_header_video_active() &&  has_header_video()) {
+			the_custom_header_markup();
+		}
+
+		?>
 		<div class="overlay">
 			<?php 
 			
@@ -27,7 +34,9 @@
 			do_action('rohas_header_logo_before');
 
 			// Display logo
+			echo '<div class="logo_wrapper">';
 			rohas_get_logo(); 
+			echo '</div>';
 
 			do_action('rohas_header_logo_after');
 

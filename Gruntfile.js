@@ -6,18 +6,34 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // Production files
         sass: {
-          dist: {
+          prod: {
             options: {                      
               outputStyle: 'compressed',
               sourceMap: false
             },
             files: {
-              'assets/css/main.css' : 'assets/scss/style.scss',
+              'assets/css/concat/main.min.css' : 'assets/scss/main.scss',
+              'assets/css/custom-editor-style.min.css' : 'assets/scss/custom-editor-style.scss',
+            }
+          },
+          dev: {
+            options: {                      
+              outputStyle: 'expanded',
+              sourceMap: true
+            },
+            files: {
+              'assets/css/main.css' : 'assets/scss/main.scss',
               'assets/css/custom-editor-style.css' : 'assets/scss/custom-editor-style.scss',
             }
           }
         },
+
+        // Development files
+        // sass: {
+          
+        // },
 
         watch: {
 
@@ -32,7 +48,7 @@ module.exports = function(grunt) {
 
           css: {
             files: ['assets/scss/*.scss'],
-            tasks: ['sass'],
+            tasks: ['sass', 'concat_css', 'lineending'],
           },
 
           php: {
@@ -61,6 +77,28 @@ module.exports = function(grunt) {
                   updatePoFiles: true              // Whether to update PO files in the same directory as the POT file.
               }
           }
+      },
+
+      concat_css: {
+        options: {
+          // Task-specific options go here. 
+        },
+        all: {
+          src: ["assets/css/concat/*.css"],
+          dest: "style.css"
+        },
+      },
+
+      lineending: {
+        dist: {
+          options: {
+            eol: 'crlf',
+            overwrite: true
+          },
+          files: {
+            '': ['style.css']
+          }
+        }
       }
 
 
