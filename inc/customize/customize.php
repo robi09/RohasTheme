@@ -80,3 +80,10 @@ function rohas_selective_refresh( WP_Customize_Manager $wp_customize ) {
     ) );
 }
 add_action( 'customize_register', 'rohas_selective_refresh' );
+
+// Reset unused controls
+function rohas_reset_customize( $wp_customize ) {
+    $wp_customize->remove_control( 'header_textcolor' );
+    $wp_customize->remove_section( 'colors' );
+}
+add_action( "customize_register", "rohas_reset_customize" );
