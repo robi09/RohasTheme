@@ -90,6 +90,11 @@ rohas_header_searchform_before
 rohas_header_searchform_after
 
 = Changelog =
+v1.3.0
+- Small fixes
+- Logo selective refresh fix
+- Selective refresh for widgets added
+- Video header support added
 
 v1.2.4
 - Small fixes

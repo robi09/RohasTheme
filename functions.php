@@ -18,6 +18,15 @@ if(!function_exists('rohas_theme_setup')) {
 			'height'        => 222,
 			'default-image' => get_template_directory_uri() . '/assets/images/header_image.jpg',
 			);
+
+		/**
+		 * Add video header support
+		 * 
+		 * @since v1.3.0
+		 */
+		if( get_bloginfo('version') >= '4.7' ) {
+			$custom_header_args['video'] = true;
+		}
 		
 		$custom_logo_args = array(
 			'flex-height' => true,
