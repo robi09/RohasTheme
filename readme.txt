@@ -2,7 +2,7 @@
 Contributors:		psdtohtmlguru
 Tags: 				one-column, custom-header, featured-images, full-width-template, responsive-layout, custom-background, custom-menu, editor-style, threaded-comments, translation-ready
 Requires at least:	3.3.0
-Tested up to:		4.6
+Tested up to:		4.7
 
 Rohas Lite
 == Description ==
@@ -95,6 +95,7 @@ v1.3.0
 - Logo selective refresh fix
 - Selective refresh for widgets added
 - Video header support added
+- Kirki Update
 
 v1.2.4
 - Small fixes
