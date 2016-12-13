@@ -48,6 +48,9 @@ if(!function_exists('rohas_theme_setup')) {
 			// Language
 		load_theme_textdomain('rohas-lite', get_template_directory() . '/languages'); 
 
+			// Add selective refresh for widgets
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 	}
 	add_action( 'after_setup_theme', 'rohas_theme_setup' );
 }
